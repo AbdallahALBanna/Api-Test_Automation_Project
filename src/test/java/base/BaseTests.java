@@ -9,6 +9,7 @@ public class BaseTests {
 
     public RequestSpecification requestSpecification;
     public final String productsResource = "products/";
+    public final String usersResource = "users/";
 
     @BeforeClass
     public void setUp(){
