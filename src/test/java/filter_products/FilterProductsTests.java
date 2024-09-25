@@ -4,11 +4,8 @@ import base.BaseTests;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 
 import static io.restassured.RestAssured.given;
 
@@ -18,8 +15,8 @@ public class FilterProductsTests extends BaseTests {
     public void filterProductsByTitle(){
 
         Response response=given().spec(requestSpecification).param("title","Silver")
-                .when().get(productsResource)
-                .then().extract().response();
+                        .when().get(productsResource)
+                        .then().extract().response();
 
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertEquals(response.statusCode(),200);
